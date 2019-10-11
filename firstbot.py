@@ -1,7 +1,11 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-chatbot = ChatBot("Fatequino")
+chatbot = ChatBot("Fatequino".
+                storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
+                database_uri='mongodb://localhost:27017/chatterbot-db',
+                logic_adapters=["chatterbot.logic.BestMatch"])
+
 
 # conversa = [
 #     "Oi",
